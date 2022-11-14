@@ -53,11 +53,11 @@ jobs:
           app_name: rz-app
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
           images: '[{
-                "name": "enzo-react",
+                "name": "groupe-un",
                 "image":{
                   "registry_type": "DOCKER_HUB",
-                  "registry": "enzocasalini",
-                  "repository": "enzo-react",
+                  "registry": "https://hub.docker.com/u/enzocasalini",
+                  "repository": "https://hub.docker.com/r/enzocasalini/enzo-react",
                   "tag": "${{steps.ref.outputs.version}}"
                  }
               }]'
