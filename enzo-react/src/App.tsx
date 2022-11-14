@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Là, ça marche !
+          S/o le gang!
         </a>
       </header>
     </div>
