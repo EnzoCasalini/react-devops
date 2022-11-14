@@ -48,16 +48,16 @@ jobs:
           VERSION=${GITHUB_REF#refs/*/}
           echo "::set-output name=version::$VERSION"
       - name: DigitalOcean App Platform deployment
-        uses: digitalocean/app_action@v1.1.3 # replace this with current version from https://github.com/digitalocean/app_action/releases
+        uses: digitalocean/app_action@v1.1.4 # replace this with current version from https://github.com/digitalocean/app_action/releases
         with:
-          app_name: monkfish-app
+          app_name: rz-app
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
           images: '[{
-                "name": "asinatra-datacollect-ynov",
+                "name": "enzo-react",
                 "image":{
                   "registry_type": "DOCKER_HUB",
-                  "registry": "asinatra",
-                  "repository": "secure",
+                  "registry": "enzocasalini",
+                  "repository": "enzo-react",
                   "tag": "${{steps.ref.outputs.version}}"
                  }
               }]'
