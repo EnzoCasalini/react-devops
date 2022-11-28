@@ -27,12 +27,12 @@ jobs:
         id: image
         run: |
           VERSION=${GITHUB_REF#refs/*/}
-          echo "DOCKER_IMAGE=${{ secrets.DOCKER_USER }}/secure:$VERSION" >> $GITHUB_ENV
+          echo "DOCKER_IMAGE=${{ secrets.DOCKER_USER }}/enzo-react:$VERSION" >> $GITHUB_ENV
           echo "::set-output name=version::$VERSION"
       
       - name: Build docker image
         run: >-
-          docker build docker/secure
+          docker build docker/enzo-react
           --label "org.label-schema.vcs-ref=$GITHUB_SHA"
           --tag $DOCKER_IMAGE
       - run: docker push $DOCKER_IMAGE
