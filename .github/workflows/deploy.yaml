@@ -60,5 +60,4 @@ jobs:
                   "repository": "enzo-react",
                   "tag": "${{steps.ref.outputs.version}}"
                  }
-              }]'
-  
+              }]
