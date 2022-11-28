@@ -32,7 +32,7 @@ jobs:
       
       - name: Build docker image
         run: >-
-          docker build enzo-react
+          docker build docker/enzo-react
           --label "org.label-schema.vcs-ref=$GITHUB_SHA"
           --tag $DOCKER_IMAGE
       - run: docker push $DOCKER_IMAGE
@@ -53,14 +53,11 @@ jobs:
           app_name: rz-app
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
           images: '[{
-                "name": " ",
+                "name": "enzocasalini-enzo-react",
                 "image":{
                   "registry_type": "DOCKER_HUB",
                   "registry": "enzocasalini",
                   "repository": "enzo-react",
                   "tag": "${{steps.ref.outputs.version}}"
                  }
-              }]'
-  
-
-#https://github.com/scaleway/scaleway-cli/blob/master/docs/commands/container.md#container-management-commands
+              }]
